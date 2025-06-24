@@ -24,6 +24,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      animation: fadeIn 1s ease-in-out;
     }
     header h1 {
       font-size: 2.5rem;
@@ -32,6 +33,7 @@
       max-width: 1100px;
       margin: auto;
       padding: 2rem 1rem;
+      animation: fadeIn 1s ease-in-out;
     }
     .skills {
       display: flex;
@@ -46,6 +48,10 @@
       box-shadow: 0 3px 6px rgba(0,0,0,0.1);
       text-align: center;
       width: 150px;
+      transition: transform 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
     }
     .skill-card img {
       width: 60px;
@@ -71,6 +77,10 @@
       width: 100%;
       display: block;
       cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .project img:hover {
+      transform: scale(1.03);
     }
     .modal {
       display: none;
@@ -91,6 +101,22 @@
       color: white;
       padding: 1.5rem;
     }
+    a.button {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #111;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    a.button:hover {
+      background: #333;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -99,6 +125,11 @@
   <h1>Md Ashar</h1>
   <p>Professional Graphic Designer | Portfolio</p>
 </header>
+
+<section>
+  <h2>Download My Resume</h2>
+  <p><a href="resume.pdf" class="button" download>Download Resume (PDF)</a></p>
+</section>
 
 <section>
   <h2>Skills & Tools</h2>
@@ -123,16 +154,19 @@
 </section>
 
 <section>
-  <h2>Projects</h2>
+  <h2>Design Projects</h2>
   <div class="projects">
     <div class="project">
-      <img src="https://via.placeholder.com/400x300" alt="Project 1" onclick="openModal(this.src)">
+      <img src="https://cdn.dribbble.com/userupload/1234567/file/original-123.jpg" alt="Poster Design" onclick="openModal(this.src)">
     </div>
     <div class="project">
-      <img src="https://via.placeholder.com/400x300" alt="Project 2" onclick="openModal(this.src)">
+      <img src="https://cdn.dribbble.com/userupload/223344/file/original-abc.jpg" alt="Social Media Template" onclick="openModal(this.src)">
     </div>
     <div class="project">
-      <img src="https://via.placeholder.com/400x300" alt="Project 3" onclick="openModal(this.src)">
+      <img src="https://cdn.dribbble.com/userupload/98765/file/original-xzy.jpg" alt="Logo Design" onclick="openModal(this.src)">
+    </div>
+    <div class="project">
+      <img src="https://cdn.dribbble.com/userupload/34455/file/original-ui.jpg" alt="Flyer Design" onclick="openModal(this.src)">
     </div>
   </div>
 </section>
